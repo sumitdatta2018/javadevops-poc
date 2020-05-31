@@ -1,0 +1,156 @@
+URL: http://sumit-pwc.eastus.cloudapp.azure.com:8081/api//master-data?types=class,user GET()
+
+Response:
+{
+	"success": true,
+	"payload": {
+		"CLASS": [{
+			"classId": 1,
+			"className": "CLASS - 9(W.B)"
+		}, {
+			"classId": 2,
+			"className": "CLASS - 10(W.B)"
+		}, {
+			"classId": 3,
+			"className": "CLASS - 11(W.B)"
+		}, {
+			"classId": 4,
+			"className": "CLASS - 12(W.B)"
+		}, {
+			"classId": 5,
+			"className": "B.A(B.U)"
+		}, {
+			"classId": 6,
+			"className": "B.A(W.B.N.S.O.U)"
+		}, {
+			"classId": 7,
+			"className": "M.A(B.U)"
+		}, {
+			"classId": 8,
+			"className": "M.A(W.B.N.S.O.U)"
+		}],
+		"USER": [{
+			"typeId": 1,
+			"typeName": "ADMIN"
+		}, {
+			"typeId": 2,
+			"typeName": "STUDENT"
+		}]
+	}
+}
+
+
+http://sumit-pwc.eastus.cloudapp.azure.com:8081/api/users POST(REGISTER)
+
+REQUEST
+{
+	"userLoginId": "sandip",
+	"password": "Welcome@1234",
+	"name": "sandip",
+	"email": "sandipdutta2017@gmail.com",
+	"mobile": "9038484564",
+	"address": "SALTLAKE",
+	"city": "KOLKATA",
+	"district": "WB",
+	"pin": "711201",
+	"userType": "STUDENT"
+}
+
+RESPONSE
+
+{
+    "success": true,
+    "payload": {
+        "userLoginId": "sandip1",
+        "password": "Welcome@1234",
+        "name": "sandip",
+        "email": "sandipdutta2017@gmail.com",
+        "mobile": "9038484364",
+        "address": "SALTLAKE",
+        "city": "KOLKATA",
+        "district": "WB",
+        "pin": "711201",
+        "userTypeId": 2,
+        "userType": "STUDENT"
+    }
+}
+
+http://sumit-pwc.eastus.cloudapp.azure.com:8081/api/login POST(LOGIN)
+
+REQUEST:
+
+{
+	"userLoginId": "sandip",
+	"password": "Welcome@1234"
+}
+
+RESPONSE
+{
+    "success": true,
+    "payload": {
+        "userLoginId": "SYSTEM_ADMIN",
+        "password": "Welcome@1234",
+        "name": "ADMIN",
+        "email": "sumitdatta2018@gmail.com",
+        "mobile": "9038484565",
+        "address": "Bally",
+        "city": "KOLKATA",
+        "district": "WB",
+        "pin": "711201",
+        "userTypeId": 1,
+        "roles": [
+            {
+                "roleId": 1,
+                "roleName": "ADMIN"
+            }
+        ],
+        "menus": [
+            {
+                "id": 1,
+                "name": "HOME",
+                "label": "HOME",
+                "parentMenu": "0",
+                "isLeftMenu": 1,
+                "browser": 1,
+                "mobile": 1,
+                "mobileBrowser": 1,
+                "isDashboard": 1,
+                "isVisible": 1,
+                "isDefault": 0,
+                "sequence": 1
+            },
+            {
+                "id": 2,
+                "name": "ABOUT US",
+                "label": "ABOUT US",
+                "parentMenu": "0",
+                "isLeftMenu": 1,
+                "browser": 1,
+                "mobile": 1,
+                "mobileBrowser": 1,
+                "isDashboard": 1,
+                "isVisible": 1,
+                "isDefault": 0,
+                "sequence": 1
+            },
+            {
+                "id": 3,
+                "name": "HISTORY",
+                "label": "HISTORY",
+                "parentMenu": "ABOUT US",
+                "isLeftMenu": 1,
+                "browser": 1,
+                "mobile": 1,
+                "mobileBrowser": 1,
+                "isDashboard": 1,
+                "isVisible": 1,
+                "isDefault": 0,
+                "sequence": 2
+            }
+        ]
+    }
+}
+
+
+
+
